@@ -1,2 +1,2 @@
-web: gunicorn --pythonpath apiProject apiProject.wsgi
+web: gunicorn --pythonpath apiProject.apiProject.wsgi
 web: python manage.py runserver
