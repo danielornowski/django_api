@@ -80,7 +80,7 @@ def deleteProject(request, pk):
 @api_view(['GET'])
 def getComments(request, pk):
     try:
-        comment = Comment.objects.all().filter(project_id=pk).prefetch_related('users')
+        comment = Comment.objects.all().filter(project_id=pk)
         serializer = CommentModelSerializer(comment, many=True)
         return Response(serializer.data)
     except Comment.DoesNotExist:
